@@ -1,0 +1,25 @@
+{
+  "name": "forkify",
+  "version": "1.0.0",
+  "description": "proyecto final",
+  "homepage": "https://github.com/fabiolaguerrero472/forkify#readme",
+  "bugs": {
+    "url": "https://github.com/fabiolaguerrero472/forkify/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fabiolaguerrero472/forkify.git"
+  },
+  "license": "ISC",
+  "author": "Fabiola Medina",
+  "type": "commonjs",
+  "source": "index.html",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html"
+  },
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.16.4",
+    "parcel": "^2.16.4"
+  }
+}
