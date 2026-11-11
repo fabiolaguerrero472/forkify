@@ -48,7 +48,6 @@ export const loadSearchResults = async function (query) {
       };
     });
 
-    // Cuando se hace una búsqueda nueva, comienza en la página 1
     state.search.page = 1;
   } catch (err) {
     console.log(`${err} 💥💥💥💥`);
