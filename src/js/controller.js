@@ -23,23 +23,28 @@ const controlRecipes = async function () {
 
 const controlSearchResults = async function () {
   try {
+    resultsView.renderSpinner();
+
     const query = searchView.getQuery();
 
-    if (!query) return;
-
-    resultsView.renderSpinner();
+    if (!query) {
+      resultsView.renderError('No recipes found for your query');
+      return;
+    }
 
     await model.loadSearchResults(query);
 
-    resultsView.render(
-      model.getSearchResultsPage()
-    );
+    if (model.state.search.results.length === 0) {
+      resultsView.renderError('No recipes found for your query');
+      return;
+    }
 
+    resultsView.render(model.getSearchResultsPage());
 
     paginationView.render(model.state.search);
   } catch (err) {
-    resultsView.renderError();
     console.error(err);
+    resultsView.renderError();
   }
 };
 
